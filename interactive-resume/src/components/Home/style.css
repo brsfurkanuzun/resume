@@ -1,0 +1,34 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  height: 100vh;
+  width: 100vw;
+
+}
+
+.home-profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.home-name {
+  margin: 0;
+}
+
+.home-username {
+  margin: 0;
+  font-weight: bold;
+}
+
+.home-job {
+  margin: 0;
+  font-style: italic;
+  color: gray;
+}
