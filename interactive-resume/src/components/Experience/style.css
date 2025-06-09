@@ -1,0 +1,41 @@
+.blured-container-bottom {
+  position: absolute;
+  bottom: 0;
+  height: 50vh;
+  background-color: var(--blur-background);
+  width: 100vw;
+  backdrop-filter: blur(100px);
+  padding-left: 5vw;
+  display: flex;
+}
+.job-container {
+  height: 100%;
+  width: 500px;
+  border-top: 1px solid var(--text-color);
+}
+.job-date {
+  position: absolute;
+  top: -15px;
+  width: 150px;
+  height: 30px;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid var(--text-color);
+  z-index: 10;
+}
+.job-title-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: -6.5rem;
+}
+.job-title-container h3,
+.job-title-container p {
+  line-height: 0px;
+}
+.title-container {
+  padding: 2vw 5vw;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import Memoji from "../../assets/memoji.webp"
+import Memoji from "../../assets/memoji.webp";
 
 const tags = [
   "Clean Code",
@@ -17,16 +17,19 @@ const tags = [
 ];
 const About = () => {
   return (
-    <div style={{ height: "100vh", display: "flex", overflow: "hidden" }}>
-      <div className="blured-container">
-        <div className="blured-container-content">
-          <div className="title-container">
+    <div
+      style={{
+        height: "100vh",
+        width: "100vw",
+        display: "flex",
+        flexDirection: "row",
+      }}
+    >
+      <div className="blured-container-about">
+        <div className="blured-container-content-about">
+          <div className="title-container-about">
             <div className="img-container">
-              <img
-                src={Memoji}
-                alt="Profile"
-                className="home-profile-img"
-              />
+              <img src={Memoji} alt="Profile" className="home-profile-img" />
             </div>
             <div>
               <h1 className="title">Hello,</h1>
@@ -35,8 +38,15 @@ const About = () => {
             </div>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "row", gap: "5rem" }}>
-            <div style={{ maxWidth: "20vw" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "5rem",
+              paddingLeft: "5vw",
+            }}
+          >
+            <div className="info-section">
               <h3>About me</h3>
               <p>
                 Full Stack Software Developer with a Bachelor's degree in
@@ -50,7 +60,7 @@ const About = () => {
                 code that solves real-world problems
               </p>
             </div>
-            <div style={{ maxWidth: "20vw" }}>
+            <div className="info-section">
               <h3>My client</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -67,7 +77,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="shape" />
+
       <div className="right-panel-container">
         <div>
           <h2>Furkan Uzun</h2>

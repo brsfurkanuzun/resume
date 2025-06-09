@@ -5,41 +5,40 @@
 html.light {
   --bg-color: #ffffff;
   --text-color: #000000;
-  --button-bg-color:#ffffff;
+  --button-bg-color: #ffffff;
   --switch-toggle-background: #00000016;
-  --switch-knob-color:linear-gradient(90deg, #494949, #828082);
-  --shape-color:linear-gradient(90deg, #00000000 ,#000000);
-  --blur-background:#ffffff70;
+  --switch-knob-color: linear-gradient(90deg, #494949, #828082);
+  --shape-color: linear-gradient(90deg, #00000000, #000000);
+  --blur-background: #ffffff70;
   --tag-button-background: #00000008;
-  --icon-color1:#000000;
-  --icon-color2:#00000030;
+  --icon-color1: #000000;
+  --icon-color2: #00000030;
 }
 
 html.dark {
   --bg-color: #333333;
   --text-color: #ffffff;
-  --button-bg-color:#ffffff16;
+  --button-bg-color: #ffffff16;
   --switch-toggle-background: #ffffff16;
-  --switch-knob-color:linear-gradient(90deg, #D1D1D1, #939393);
-  --shape-color:linear-gradient(90deg, #ffffff00,#ffffff );
-  --blur-background:#35353570;
+  --switch-knob-color: linear-gradient(90deg, #d1d1d1, #939393);
+  --shape-color: linear-gradient(90deg, #ffffff00, #ffffff);
+  --blur-background: #35353570;
   --tag-button-background: #ffffff08;
-  --icon-color1:#ffffff;
-  --icon-color2:#ffffff30;
-
+  --icon-color1: #ffffff;
+  --icon-color2: #ffffff30;
 }
 
 html.neon {
   --bg-color: #ffffff;
   --text-color: #000000;
-  --button-bg-color:#ffffff;
+  --button-bg-color: #ffffff;
   --switch-toggle-background: #00000016;
-  --switch-knob-color: linear-gradient(90deg, #42E2F4, #FBF2B1);
-  --shape-color:linear-gradient(90deg, #42E2F454 45%,#FBF2B1 140%);
-  --blur-background:#ffffff70;
+  --switch-knob-color: linear-gradient(90deg, #42e2f4, #fbf2b1);
+  --shape-color: linear-gradient(90deg, #42e2f454 45%, #fbf2b1 140%);
+  --blur-background: #ffffff70;
   --tag-button-background: #00000008;
---icon-color1:#000000;
-  --icon-color2:#00000030;
+  --icon-color1: #000000;
+  --icon-color2: #00000030;
 }
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -72,10 +71,12 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2em;
   line-height: 1.1;
 }
-p{font-size: 16px;}
+p {
+  font-size: 16px;
+}
 
 button {
   border-radius: 8px;
@@ -109,25 +110,25 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-.switch-toggle-container{
+.switch-toggle-container {
   width: 70px;
   height: 35px;
   background-color: var(--switch-toggle-background);
 }
-.switch-toggle-knob{
+.switch-toggle-knob {
   background: var(--switch-knob-color);
   transition: background 0.3s ease;
   width: 30px;
   height: 30px;
 }
-.img-container{
-    background-color: var(--text-color);
-    width: 56px;
-    height: 56px;
-    border-radius: 999px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.img-container {
+  background-color: var(--text-color);
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .home-profile-img {
   width: 75px;
@@ -135,4 +136,3 @@ button:focus-visible {
   border-radius: 50%;
   object-fit: cover;
 }
-
