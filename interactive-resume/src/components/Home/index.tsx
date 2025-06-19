@@ -5,7 +5,7 @@ import Memoji from "../../assets/memoji.webp";
 const Home = () => {
   return (
     <div className="home-container">
-      <div className="img-container">
+      <div className="img-container-home">
         <img src={Memoji} alt="Profile" className="home-profile-img" />
       </div>
 

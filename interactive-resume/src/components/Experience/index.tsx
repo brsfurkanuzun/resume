@@ -48,6 +48,9 @@ const Experience = () => {
             <div className="job-date">
               <p>{job.year}</p>
             </div>
+            <div className="job-resp">
+              <h4>Responsibilites</h4>
+            </div>
           </div>
         ))}
       </div>

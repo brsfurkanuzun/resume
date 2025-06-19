@@ -69,9 +69,21 @@ const Miscellaneous = () => {
       <div className="right-panel-container">
         <div style={{ flexDirection: "column", display: "flex" }}>
           <h3>My spaces</h3>
-          <a href="mailto:barisfurkanuz@gmail.com">Instagram</a>
-          <a href="https://www.linkedin.com/in/barisfurkanuzun/">LinkedIn</a>
-          <a href="mailto:barisfurkanuz@gmail.com">X</a>
+          <a target="_blank" href="https://www.instagram.com/barisfurkanuzun/">
+            Instagram
+          </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/barisfurkanuzun/"
+          >
+            LinkedIn
+          </a>
+          <a target="_blank" href="https://github.com/brsfurkanuzun">
+            GitHub
+          </a>
+          <a target="_blank" href="mailto:barisfurkanuz@gmail.com">
+            X
+          </a>
         </div>
       </div>
     </div>

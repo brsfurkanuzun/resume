@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
+import Home from "./components/Home";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Miscellaneous from "./components/Miscellaneous";
@@ -15,18 +16,36 @@ export default function App() {
       <Shape />
 
       <Swiper
-        direction="horizontal"
+        direction="vertical"
         slidesPerView={1}
+        mousewheel={true}
+        modules={[Mousewheel]}
         style={{ width: "100vw", height: "100vh" }}
       >
+        {/* Dikeyde ilk slide: HOME */}
         <SwiperSlide>
-          <About />
+          <Home />
         </SwiperSlide>
-        <SwiperSlide style={{ width: "100vw", height: "100vh" }}>
-          <Experience />
-        </SwiperSlide>
-        <SwiperSlide style={{ width: "100vw", height: "100vh" }}>
-          <Miscellaneous />
+
+        {/* Dikeyde ikinci slide: yatay swiper */}
+        <SwiperSlide>
+          <Swiper
+            direction="horizontal"
+            slidesPerView={1}
+            mousewheel={{ forceToAxis: true }}
+            modules={[Mousewheel]}
+            style={{ width: "100vw", height: "100vh" }}
+          >
+            <SwiperSlide>
+              <About />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Experience />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Miscellaneous />
+            </SwiperSlide>
+          </Swiper>
         </SwiperSlide>
       </Swiper>
     </div>

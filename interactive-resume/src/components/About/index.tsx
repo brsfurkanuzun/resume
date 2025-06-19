@@ -29,7 +29,7 @@ const About = () => {
         <div className="blured-container-content-about">
           <div className="title-container-about">
             <div className="img-container">
-              <img src={Memoji} alt="Profile" className="home-profile-img" />
+              <img src={Memoji} alt="Profile" className="about-profile-img" />
             </div>
             <div>
               <h1 className="title">Hello,</h1>

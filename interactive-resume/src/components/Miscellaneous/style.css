@@ -39,3 +39,11 @@
   align-items: center;
   padding: 0 10px;
 }
+
+.right-panel-container a:hover {
+  background: linear-gradient(90deg, #42e2f4, #fbf2b1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
