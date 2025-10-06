@@ -42,3 +42,15 @@
   display: flex;
   flex-direction: column;
 }
+.gradient-text {
+  background: linear-gradient(90deg, #EC6F66, #F3A183);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+.gradient-career {
+  background: linear-gradient(90deg, #11998e, #38ef7d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}

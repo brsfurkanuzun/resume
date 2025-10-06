@@ -13,6 +13,10 @@ html.light {
   --tag-button-background: #00000008;
   --icon-color1: #000000;
   --icon-color2: #00000030;
+  --pagination-container-bg: #00000024;
+  --pagination-bullet-bg: #ffffff;
+  --next-button-color: #ffffff;
+  --neon-highlight: linear-gradient(90deg, #42e2f4, #fbf2b1)
 }
 
 html.dark {
@@ -26,6 +30,12 @@ html.dark {
   --tag-button-background: #ffffff08;
   --icon-color1: #ffffff;
   --icon-color2: #ffffff30;
+  --pagination-container-bg: #00000070;
+  --pagination-bullet-bg: #ffffff16;
+  --next-button-color: #000000;
+  --neon-highlight: #000
+
+
 }
 
 html.neon {
@@ -39,6 +49,13 @@ html.neon {
   --tag-button-background: #00000008;
   --icon-color1: #000000;
   --icon-color2: #00000030;
+  --pagination-container-bg: #00000024;
+  --pagination-bullet-bg: #ffffff;
+  --next-button-color: #ffffff;
+  --neon-highlight: linear-gradient(90deg, #42e2f4, #fbf2b1)
+
+
+
 }
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

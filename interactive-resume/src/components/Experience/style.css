@@ -39,3 +39,25 @@
 .title-container {
   padding: 2vw 5vw;
 }
+.location-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+.job-location{
+  background: linear-gradient(90deg, #42e2f4, #fbf2b1);
+  color: black;
+  padding: 0px 12px;
+  width: fit-content;
+  height: fit-content;
+  font-weight: bold;
+  border-radius: 50px;
+  line-height: normal;
+  max-height: 20px;
+  display: flex;
+  align-items: center;
+}
+.job-location p{
+  font-size: 14px;
+}

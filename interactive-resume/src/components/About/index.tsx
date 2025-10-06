@@ -14,7 +14,18 @@ const tags = [
   "API Integration",
   "Version Control",
   "Mobile Development",
+  "Agile & Scrum",
+  "CI/CD",
+  "Problem Solving",
+  "Performance Optimization",
+  "Security Best Practices",
+  "Cloud Deployment",
+  "Code Review",
+  "Documentation",
+  "Scalable Systems",
+  "Team Collaboration",
 ];
+
 const About = () => {
   return (
     <div
@@ -49,29 +60,77 @@ const About = () => {
             <div className="info-section">
               <h3>About me</h3>
               <p>
-                Full Stack Software Developer with a Bachelor's degree in
-                Computer Engineering and 3+ years of hands-on experience in
-                developing modern web and mobile applications. Proficient in
-                both frontend and backend technologies, including React,
-                TypeScript, Node.js, and microservice architectures. Adept at
-                creating clean, minimalist UI designs and delivering scalable,
-                maintainable code. Known for being a fast learner with a
-                collaborative spirit, and a strong passion for writing robust
-                code that solves real-world problems
+                Hi, I’m Furkan. I’m a devoted Fenerbahçe supporter, and
+                following the team is one of my greatest passions—it’s more than
+                just football, it’s a part of who I am. I have a loyal dog named
+                Ruzgar, who fills my days with joy and energy. I’m naturally
+                friendly and outgoing, always excited to meet new people and
+                share experiences. On July 20, 2024, I got engaged to{" "}
+                <span className="gradient-text">
+                  the most incredible, intelligent, and beautiful woman I’ve
+                  ever met—truly the love of my life.
+                </span>{" "}
+                She has been a constant source of inspiration and motivation,
+                and her support has fueled many of the successes in my career,
+                making that milestone even more meaningful.
+              </p>
+              <p>
+                Sports have always been a big part of my life. I have previously
+                practiced swimming, where I even achieved first place in
+                competitions, and I’ve played amateur handball and football.
+                These experiences taught me discipline, perseverance, and the
+                importance of teamwork. Beyond sports and personal life, I’m a
+                curious soul who loves diving into video games, exploring new
+                worlds and challenges, and expanding my collections—whether it’s
+                gaming memorabilia or unique collectibles. I enjoy learning new
+                skills, staying creative, and surrounding myself with inspiring
+                people. For me, life is about passion, friendships, meaningful
+                connections, and embracing every opportunity to grow while
+                enjoying the journey.
+              </p>
+              <p>
+                My goal is to be <span className="gradient-text">a good</span>{" "}
+                person, <span className="gradient-text">a loyal</span> friend,{" "}
+                <span className="gradient-text">a loving</span> husband, and{" "}
+                <span className="gradient-text">a caring</span> father.
               </p>
             </div>
             <div className="info-section">
-              <h3>My client</h3>
+              <h3>My Journey</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Malesuada dignissim condimentum feugiat nisl. Ultrices libero
-                massa enim, tristique turpis egestas cras. Ut quis duis
-                consequat augue commodo. Eget arcu, condimentum aliquet fusce
-                mauris aliquet massa. Purus dolor euismod porta eget eu. Sodales
-                tellus sit quisque nullam nisi sed massa. Turpis ege. Lacus,
-                bibendum arcu ornare fames interdum risus. Non bibendum cursus
-                enim, venenatis. Nunc egestas in ut massa praesent enim,
-                egestas. Platea pellentesque nam odio.
+                I began my professional journey in Istanbul, working at a
+                technology company as a{" "}
+                <span className="gradient-career">
+                  Software Development Specialist
+                </span>
+                . During my time there, I was deeply involved in{" "}
+                <span className="gradient-career">backend development</span> and
+                led the company’s transition to a microservice architecture.
+                While working in Istanbul, I was offered an exciting remote,
+                part-time opportunity with a company in New York, where I
+                focused on{" "}
+                <span className="gradient-career">frontend development</span>{" "}
+                and <span className="gradient-career">game development.</span>
+              </p>
+              <p>
+                After leaving my previous roles, I started exploring freelance
+                opportunities, working on a project in Canada to design the user
+                interface for an application, while also taking on various
+                freelance projects in Turkey. These experiences allowed me to
+                combine my skills in both frontend and backend development, work
+                with diverse teams across the globe, and continuously challenge
+                myself to create user-friendly and impactful digital
+                experiences.
+              </p>
+              <p>
+                My goal is to be{" "}
+                <span className="gradient-career">a skilled</span>,{" "}
+                <span className="gradient-career">reliable</span>, and{" "}
+                <span className="gradient-career">collaborative</span>{" "}
+                professional, delivering{" "}
+                <span className="gradient-career">high-quality work</span> and{" "}
+                <span className="gradient-career">continuously growing</span> in
+                my career.
               </p>
             </div>
           </div>
