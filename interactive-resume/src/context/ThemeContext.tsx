@@ -1,7 +1,12 @@
-import { createContext, useState, useContext, useEffect } from "react";
-import type { ReactNode } from "react"; // 👈 Tip olarak import edildi
+import {
+  createContext,
+  useState,
+  useContext,
+  useEffect,
+  ReactNode,
+} from "react";
 
-type Theme = "light" | "dark" | "neon";
+type Theme = "light" | "dark";
 
 interface ThemeContextProps {
   theme: Theme;
@@ -11,16 +16,19 @@ interface ThemeContextProps {
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>("light");
-
-  useEffect(() => {
+  // localStorage’dan hemen oku, yoksa default light
+  const getInitialTheme = (): Theme => {
     const storedTheme = localStorage.getItem("theme") as Theme | null;
-    if (storedTheme) setTheme(storedTheme);
-  }, []);
+    return storedTheme === "dark" ? "dark" : "light";
+  };
 
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+
+  // Theme değişince localStorage ve HTML class’ı güncelle
   useEffect(() => {
     localStorage.setItem("theme", theme);
-    document.documentElement.className = theme;
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
   }, [theme]);
 
   return (

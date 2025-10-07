@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import Icon from "../../assets/experience";
+import DecryptedText from "../DecryptedText";
 
 const experienceData = [
   {
@@ -70,8 +71,22 @@ const Experience = () => {
           secondaryColor="var(--icon-color2)"
         />
         <div>
-          <h1 className="title">Places that</h1>
-          <h1 className="title">I worked @</h1>
+          <h1 className="title">
+            <DecryptedText
+              sequential={true}
+              animateOn="view"
+              text="Places that"
+              speed={120}
+            />
+          </h1>
+          <h1 className="title">
+            <DecryptedText
+              sequential={true}
+              animateOn="view"
+              text="I worked @"
+              speed={120}
+            />
+          </h1>
         </div>
       </div>
       <div className="blured-container-bottom">

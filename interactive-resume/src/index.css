@@ -16,7 +16,8 @@ html.light {
   --pagination-container-bg: #00000024;
   --pagination-bullet-bg: #ffffff;
   --next-button-color: #ffffff;
-  --neon-highlight: linear-gradient(90deg, #42e2f4, #fbf2b1)
+  --neon-highlight: linear-gradient(90deg, #42e2f4, #fbf2b1);
+  --magnet-line:#00000030;
 }
 
 html.dark {
@@ -34,6 +35,7 @@ html.dark {
   --pagination-bullet-bg: #ffffff16;
   --next-button-color: #000000;
   --neon-highlight: #000
+  --magnet-line:#ffffff30;
 
 
 }
@@ -52,7 +54,9 @@ html.neon {
   --pagination-container-bg: #00000024;
   --pagination-bullet-bg: #ffffff;
   --next-button-color: #ffffff;
-  --neon-highlight: linear-gradient(90deg, #42e2f4, #fbf2b1)
+  --neon-highlight: linear-gradient(90deg, #42e2f4, #fbf2b1);
+  
+
 
 
 

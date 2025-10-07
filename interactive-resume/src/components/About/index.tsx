@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import Memoji from "../../assets/memoji.webp";
+import DecryptedText from "../DecryptedText";
 
 const tags = [
   "Clean Code",
@@ -43,9 +44,30 @@ const About = () => {
               <img src={Memoji} alt="Profile" className="about-profile-img" />
             </div>
             <div>
-              <h1 className="title">Hello,</h1>
-              <h1 className="title">I'm Furkan</h1>
-              <h1 className="title">Software developer</h1>
+              <h1 className="title">
+                <DecryptedText
+                  sequential={true}
+                  animateOn="view"
+                  text="Hello,"
+                  speed={120}
+                />
+              </h1>
+              <h1 className="title">
+                <DecryptedText
+                  sequential={true}
+                  animateOn="view"
+                  text="I'm Furkan."
+                  speed={120}
+                />
+              </h1>
+              <h1 className="title">
+                <DecryptedText
+                  sequential={true}
+                  animateOn="view"
+                  text="Software developer"
+                  speed={120}
+                />
+              </h1>
             </div>
           </div>
 

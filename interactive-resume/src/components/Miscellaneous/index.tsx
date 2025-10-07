@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 import Memoji from "../../assets/memoji.webp";
 import Icon from "../../assets/miscellaneous";
+import DecryptedText from "../DecryptedText";
 
 const techs = [
   "Figma",
@@ -44,8 +45,22 @@ const Miscellaneous = () => {
               secondaryColor="var(--icon-color2)"
             />
             <div>
-              <h1 className="title">Can be</h1>
-              <h1 className="title">Miscellaneous</h1>
+              <h1 className="title">
+                <DecryptedText
+                  sequential={true}
+                  animateOn="view"
+                  text="Can be"
+                  speed={120}
+                />
+              </h1>
+              <h1 className="title">
+                <DecryptedText
+                  sequential={true}
+                  animateOn="view"
+                  text="Miscellaneous"
+                  speed={120}
+                />
+              </h1>
             </div>
           </div>
 

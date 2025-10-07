@@ -13,14 +13,17 @@ const ThemeSelector = () => {
         display: "flex",
         gap: "1rem",
         position: "absolute",
+        alignItems: "center",
         right: 0,
         margin: "5vh",
         zIndex: 5,
       }}
     >
       <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <span onClick={() => setTheme("light")}>LIGHT</span>
-        <span onClick={() => setTheme("neon")}>NEON</span>
+        <span style={{ cursor: "pointer" }} onClick={() => setTheme("light")}>
+          LIGHT
+        </span>
+        {/* <span onClick={() => setTheme("neon")}>NEON</span> */}
       </div>
 
       <div
@@ -43,7 +46,9 @@ const ThemeSelector = () => {
         ></div>
       </div>
 
-      <span onClick={() => setTheme("dark")}>DARK</span>
+      <span style={{ cursor: "pointer" }} onClick={() => setTheme("dark")}>
+        DARK
+      </span>
     </div>
   );
 };
