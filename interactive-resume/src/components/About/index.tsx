@@ -75,18 +75,14 @@ const About = () => {
                 making that milestone even more meaningful.
               </p>
               <p>
-                Sports have always been a big part of my life. I have previously
-                practiced swimming, where I even achieved first place in
-                competitions, and I’ve played amateur handball and football.
-                These experiences taught me discipline, perseverance, and the
-                importance of teamwork. Beyond sports and personal life, I’m a
-                curious soul who loves diving into video games, exploring new
-                worlds and challenges, and expanding my collections—whether it’s
-                gaming memorabilia or unique collectibles. I enjoy learning new
-                skills, staying creative, and surrounding myself with inspiring
-                people. For me, life is about passion, friendships, meaningful
-                connections, and embracing every opportunity to grow while
-                enjoying the journey.
+                Sports have always been a big part of my life—I achieved first
+                place in swimming competitions and also played amateur handball
+                and football. These experiences shaped my discipline,
+                perseverance, and teamwork. Beyond sports, I’m passionate about
+                video games, exploring new worlds, and growing my collection of
+                unique items. I enjoy learning new skills, staying creative, and
+                surrounding myself with inspiring people, always seeking
+                passion, friendships, and meaningful connections along the way.
               </p>
               <p>
                 My goal is to be <span className="gradient-text">a good</span>{" "}
