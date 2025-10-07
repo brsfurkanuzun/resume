@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+import type { ReactNode } from "react";
+
 import {
   motion,
   useAnimation,
   useMotionValue,
   MotionValue,
 } from "motion/react";
+import type { Transition } from "framer-motion";
 
 import "./style.css";
 interface CircularTextProps {
@@ -12,6 +15,7 @@ interface CircularTextProps {
   spinDuration?: number;
   onHover?: "slowDown" | "speedUp" | "pause" | "goBonkers";
   className?: string;
+  children?: ReactNode;
 }
 
 const getRotationTransition = (
@@ -36,13 +40,13 @@ const getTransition = (duration: number, from: number) => ({
   },
 });
 
-const CircularText: React.FC<CircularTextProps> = ({
+const CircularText = ({
   text,
   spinDuration = 20,
   onHover = "speedUp",
   className = "",
   children,
-}) => {
+}: CircularTextProps) => {
   const letters = Array.from(text);
   const controls = useAnimation();
   const rotation: MotionValue<number> = useMotionValue(0);

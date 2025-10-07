@@ -1,5 +1,4 @@
 // components/Icon.tsx
-import React from "react";
 
 interface IconProps {
   width?: number;

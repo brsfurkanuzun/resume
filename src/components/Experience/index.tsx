@@ -1,4 +1,3 @@
-import React from "react";
 import "./style.css";
 import Icon from "../../assets/experience";
 import DecryptedText from "../DecryptedText";

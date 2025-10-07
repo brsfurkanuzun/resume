@@ -1,6 +1,4 @@
-import React from "react";
 import "./style.css";
-import Memoji from "../../assets/memoji.webp";
 import Icon from "../../assets/miscellaneous";
 import DecryptedText from "../DecryptedText";
 

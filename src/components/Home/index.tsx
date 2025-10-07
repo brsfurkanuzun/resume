@@ -1,4 +1,3 @@
-import React from "react";
 import "./style.css";
 import Memoji from "../../assets/memoji.webp";
 import CircularText from "../CircularText";
