@@ -168,7 +168,29 @@ const About = () => {
 
             {/* My Journey */}
             {(!isMobile || activeTab === "journey") && (
-              <div className="info-section">
+              <div
+                className="info-section"
+                onTouchStart={(e) => {
+                  const touch = e.touches[0];
+                  touchStartRef.current = {
+                    x: touch.clientX,
+                    y: touch.clientY,
+                  };
+                }}
+                onTouchMove={(e) => {
+                  const touch = e.touches[0];
+                  const deltaX = Math.abs(
+                    touch.clientX - touchStartRef.current.x
+                  );
+                  const deltaY = Math.abs(
+                    touch.clientY - touchStartRef.current.y
+                  );
+
+                  if (deltaY > deltaX) {
+                    e.stopPropagation();
+                  }
+                }}
+              >
                 {/* <h3>My Journey</h3> */}
                 <div className="paragraph">
                   <p>

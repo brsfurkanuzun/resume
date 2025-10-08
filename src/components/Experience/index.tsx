@@ -1,6 +1,7 @@
 import "./style.css";
 import Icon from "../../assets/experience";
 import DecryptedText from "../DecryptedText";
+import { useState, useEffect, useRef } from "react";
 
 const experienceData = [
   {
@@ -62,8 +63,18 @@ const experienceData = [
 ];
 
 const Experience = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const touchStartRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div className="page">
+    <div className={`page ${isMobile ? "mobile-experience" : ""}`}>
       <div className="title-container">
         <Icon
           primaryColor="var(--icon-color1)"
@@ -72,7 +83,7 @@ const Experience = () => {
         <div>
           <h1 className="title">
             <DecryptedText
-              sequential={true}
+              sequential
               animateOn="view"
               text="Places that"
               speed={120}
@@ -80,7 +91,7 @@ const Experience = () => {
           </h1>
           <h1 className="title">
             <DecryptedText
-              sequential={true}
+              sequential
               animateOn="view"
               text="I worked @"
               speed={120}
@@ -88,7 +99,26 @@ const Experience = () => {
           </h1>
         </div>
       </div>
-      <div className="blured-container-bottom">
+
+      <div
+        className="blured-container-bottom"
+        onTouchStart={(e) => {
+          const touch = e.touches[0];
+          touchStartRef.current = {
+            x: touch.clientX,
+            y: touch.clientY,
+          };
+        }}
+        onTouchMove={(e) => {
+          const touch = e.touches[0];
+          const deltaX = Math.abs(touch.clientX - touchStartRef.current.x);
+          const deltaY = Math.abs(touch.clientY - touchStartRef.current.y);
+
+          if (deltaY > deltaX) {
+            e.stopPropagation();
+          }
+        }}
+      >
         {experienceData.map((job, index) => (
           <div className="job-container" key={index}>
             <div className="job-title-container">
@@ -104,7 +134,7 @@ const Experience = () => {
               <p>{job.year}</p>
             </div>
             <div className="job-resp">
-              <h4>Responsibilites</h4>
+              <h4>Responsibilities</h4>
               <ul>
                 {job.responsibilities.map((resp, i) => (
                   <li key={i}>{resp}</li>
@@ -117,4 +147,5 @@ const Experience = () => {
     </div>
   );
 };
+
 export default Experience;
