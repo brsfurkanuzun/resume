@@ -54,3 +54,30 @@
   -webkit-text-fill-color: transparent;
   font-weight: bold;
 }
+@media (max-width: 768px) {
+  
+  .blured-container-content-about > div {
+    flex-direction: column;
+    width: 100vw;
+    padding-left: 2vw; 
+  }
+
+ .info-section {
+  width:95vw;
+  display: flex;
+  flex-direction: column;
+  max-width: none; 
+  height: 100%;
+}
+
+  .paragraph {
+    max-height: 17vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-right: 0.5rem;
+  }
+
+  .right-panel-container {
+    display: none;
+  }
+}

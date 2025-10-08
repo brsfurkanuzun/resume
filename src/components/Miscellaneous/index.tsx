@@ -1,6 +1,8 @@
+import { useState, useEffect } from "react";
 import "./style.css";
 import Icon from "../../assets/miscellaneous";
 import DecryptedText from "../DecryptedText";
+import Marquee from "react-fast-marquee";
 
 const techs = [
   "Figma",
@@ -32,7 +34,23 @@ const techs = [
   "n8n",
 ];
 
+const spaces = [
+  { name: "Instagram", href: "https://www.instagram.com/barisfurkanuzun/" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/barisfurkanuzun/" },
+  { name: "GitHub", href: "https://github.com/brsfurkanuzun" },
+  { name: "X", href: "mailto:barisfurkanuz@gmail.com" },
+];
+
 const Miscellaneous = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div style={{ height: "100vh", display: "flex" }}>
       <div className="blured-container-misc">
@@ -45,7 +63,7 @@ const Miscellaneous = () => {
             <div>
               <h1 className="title">
                 <DecryptedText
-                  sequential={true}
+                  sequential
                   animateOn="view"
                   text="Can be"
                   speed={120}
@@ -53,7 +71,7 @@ const Miscellaneous = () => {
               </h1>
               <h1 className="title">
                 <DecryptedText
-                  sequential={true}
+                  sequential
                   animateOn="view"
                   text="Miscellaneous"
                   speed={120}
@@ -63,12 +81,8 @@ const Miscellaneous = () => {
           </div>
 
           <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: "5rem",
-              paddingLeft: "5vw",
-            }}
+            className="info-container"
+            style={{ flexDirection: isMobile ? "column" : "row" }}
           >
             <div className="info-section">
               <h3>Education</h3>
@@ -81,47 +95,90 @@ const Miscellaneous = () => {
                   combine my technical skills with creativity. For my graduation
                   project, I developed BilgiLife, a fully interactive Unity 3D
                   application that allows students and prospective students to
-                  explore the campus in a virtual environment. The campus was
-                  carefully modeled in Blender and SketchUp, creating an
-                  immersive experience that brings the university to life and
-                  allows users to navigate and engage with its facilities as if
-                  they were physically there.
+                  explore the campus in a virtual environment.
                 </p>
               </div>
             </div>
+
             <div className="info-section">
               <h3>Technology</h3>
-              <div className="tags-container">
-                {techs.map((tech, index) => (
-                  <div key={index} className="tags-button">
-                    <p>{tech}</p>
+              {isMobile ? (
+                <div style={{ width: "100%", overflow: "hidden" }}>
+                  <Marquee speed={25}>
+                    {techs.map((tech, index) => (
+                      <div
+                        key={index}
+                        style={{
+                          marginRight: "1.5rem",
+                          padding: "0.3rem 0.8rem",
+                          backgroundColor: "var(--tag-button-background)",
+                          borderRadius: "999px",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        {tech}
+                      </div>
+                    ))}
+                  </Marquee>
+                </div>
+              ) : (
+                <div className="tags-container">
+                  {techs.map((tech, index) => (
+                    <div key={index} className="tags-button">
+                      <p>{tech}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {isMobile && (
+                <div style={{ marginTop: "1rem" }}>
+                  <h3>My spaces</h3>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      gap: "0.5rem",
+                      alignItems: "center",
+                    }}
+                  >
+                    {spaces.map((space, idx) => (
+                      <span
+                        key={idx}
+                        style={{ display: "flex", alignItems: "center" }}
+                      >
+                        <a
+                          target="_blank"
+                          href={space.href}
+                          style={{ textDecoration: "none" }}
+                        >
+                          {space.name}
+                        </a>
+                        {idx < spaces.length - 1 && (
+                          <span style={{ margin: "0 0.5rem" }}>•</span>
+                        )}
+                      </span>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </div>
-      <div className="right-panel-container">
-        <div style={{ flexDirection: "column", display: "flex" }}>
-          <h3>My spaces</h3>
-          <a target="_blank" href="https://www.instagram.com/barisfurkanuzun/">
-            Instagram
-          </a>
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/barisfurkanuzun/"
-          >
-            LinkedIn
-          </a>
-          <a target="_blank" href="https://github.com/brsfurkanuzun">
-            GitHub
-          </a>
-          <a target="_blank" href="mailto:barisfurkanuz@gmail.com">
-            X
-          </a>
+
+      {!isMobile && (
+        <div className="right-panel-container">
+          <div style={{ flexDirection: "column", display: "flex" }}>
+            <h3>My spaces</h3>
+            {spaces.map((space, idx) => (
+              <a key={idx} target="_blank" href={space.href}>
+                {space.name}
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

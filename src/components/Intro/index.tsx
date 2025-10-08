@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface IntroProps {
@@ -11,6 +11,29 @@ const pathD =
 const Intro: React.FC<IntroProps> = ({ onFinish }) => {
   const [animateZoom, setAnimateZoom] = useState(false);
   const pathRef = useRef<SVGPathElement>(null);
+
+  const [zoomValues, setZoomValues] = useState({ scale: 1, x: 0, y: 0 });
+
+  useEffect(() => {
+    const updateZoom = () => {
+      const w = window.innerWidth;
+      // const h = window.innerHeight;
+
+      if (w >= 2000) {
+        setZoomValues({ scale: 100, x: -3000, y: -6600 });
+      } else if (w >= 1280) {
+        setZoomValues({ scale: 80, x: -2400, y: -5200 });
+      } else if (w >= 768) {
+        setZoomValues({ scale: 50, x: -1500, y: -3300 });
+      } else {
+        setZoomValues({ scale: 30, x: -900, y: -2000 });
+      }
+    };
+
+    updateZoom();
+    window.addEventListener("resize", updateZoom);
+    return () => window.removeEventListener("resize", updateZoom);
+  }, []);
 
   return (
     <AnimatePresence>
@@ -32,13 +55,13 @@ const Intro: React.FC<IntroProps> = ({ onFinish }) => {
         exit={{ opacity: 0 }}
       >
         <motion.svg
-          width="400"
-          height="400"
+          width="80vw"
+          height="80vw"
+          style={{ maxWidth: "400px", maxHeight: "400px" }}
           viewBox="0 0 400 400"
-          xmlns="http://www.w3.org/2000/svg"
           animate={
             animateZoom
-              ? { scale: 100, x: -3000, y: -6600 } // sağ-alt yönüne kaydır ve büyüt
+              ? { scale: zoomValues.scale, x: zoomValues.x, y: zoomValues.y }
               : {}
           }
           transition={{ duration: 2, ease: "easeInOut" }}
@@ -55,14 +78,9 @@ const Intro: React.FC<IntroProps> = ({ onFinish }) => {
             animate={{ pathLength: 1, fillOpacity: 1 }}
             transition={{ duration: 2, ease: "easeInOut" }}
             onAnimationComplete={() => {
-              // Stroke'u animasyon bitince kaldır
               if (pathRef.current)
                 pathRef.current.setAttribute("stroke", "transparent");
-
-              // Zoom animasyonunu başlat
               setAnimateZoom(true);
-
-              // Intro tamamlandığında callback çağır
               setTimeout(() => onFinish && onFinish(), 2000);
             }}
           />

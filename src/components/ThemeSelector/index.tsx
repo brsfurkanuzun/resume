@@ -1,9 +1,21 @@
-// components/ThemeSelector.tsx
-
 import { useTheme } from "../../context/ThemeContext";
+import { useState, useEffect } from "react";
 
 const ThemeSelector = () => {
   const { theme, setTheme } = useTheme();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // 768px altı mobil kabul edelim
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  if (isMobile) return null; // Mobilde hiç render etme
 
   const knobLeft = theme === "dark" ? "37.5px" : "2.5px";
 
