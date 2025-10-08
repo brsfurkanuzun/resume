@@ -71,7 +71,7 @@
 }
 
   .paragraph {
-    max-height: 17vh;
+    max-height: 30vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding-right: 0.5rem;
@@ -80,4 +80,20 @@
   .right-panel-container {
     display: none;
   }
+}
+.mobile-tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.mobile-tabs h3 {
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  opacity: 0.3; 
+}
+
+.mobile-tabs h3.active {
+  opacity: 1; 
 }
