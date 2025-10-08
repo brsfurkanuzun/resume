@@ -57,7 +57,7 @@
 @media (max-width: 768px) {
   
   .blured-container-content-about > div {
-    flex-direction: column;
+    flex-direction: row;
     width: 100vw;
     padding-left: 2vw; 
   }
