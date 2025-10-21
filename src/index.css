@@ -157,3 +157,20 @@ button:focus-visible {
   border-radius: 50%;
   object-fit: cover;
 }
+button {
+  outline: none;
+  border: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  outline: none;
+}
+
+body {
+  height: 100dvh; /* Dynamic Viewport Height */
+  height: -webkit-fill-available;
+}

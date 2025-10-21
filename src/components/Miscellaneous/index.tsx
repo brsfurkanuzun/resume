@@ -38,7 +38,7 @@ const spaces = [
   { name: "Instagram", href: "https://www.instagram.com/barisfurkanuzun/" },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/barisfurkanuzun/" },
   { name: "GitHub", href: "https://github.com/brsfurkanuzun" },
-  { name: "X", href: "mailto:barisfurkanuz@gmail.com" },
+  { name: "X", href: "https://x.com/barisfurkanuzun" },
 ];
 
 const Miscellaneous = () => {

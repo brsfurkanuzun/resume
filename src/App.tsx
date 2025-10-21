@@ -12,9 +12,11 @@ import Miscellaneous from "./components/Miscellaneous";
 import ThemeSelector from "./components/ThemeSelector";
 import Shape from "./components/Shape";
 import Intro from "./components/Intro";
+import StaggeredMenu from "./components/StaggeredMenu";
 
 export default function App() {
-  const swiperRef = useRef<any>(null);
+  const verticalSwiperRef = useRef<any>(null);
+  const horizontalSwiperRef = useRef<any>(null);
   const [showIntro, setShowIntro] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -33,6 +35,41 @@ export default function App() {
     link.click();
   };
 
+  // Menu navigation handler
+  const handleMenuNavigation = (link: string) => {
+    switch (link) {
+      case "/":
+        verticalSwiperRef.current?.slideTo(0);
+        break;
+      case "/about":
+        verticalSwiperRef.current?.slideTo(1);
+        horizontalSwiperRef.current?.slideTo(0);
+        break;
+      case "/services":
+        verticalSwiperRef.current?.slideTo(1);
+        horizontalSwiperRef.current?.slideTo(1);
+        break;
+      case "/contact":
+        verticalSwiperRef.current?.slideTo(1);
+        horizontalSwiperRef.current?.slideTo(2);
+        break;
+    }
+  };
+
+  const menuItems = [
+    { label: "Home", ariaLabel: "Go to home page", link: "/" },
+    { label: "About", ariaLabel: "Learn about me", link: "/about" },
+    { label: "Works", ariaLabel: "View our services", link: "/services" },
+    { label: "Misc.", ariaLabel: "Get in touch", link: "/contact" },
+  ];
+
+  const socialItems = [
+    { label: "Instagram", link: "https://www.instagram.com/barisfurkanuzun/" },
+    { label: "LinkedIn", link: "https://www.linkedin.com/in/barisfurkanuzun/" },
+    { label: "GitHub", link: "https://github.com/brsfurkanuzun" },
+    { label: "X", link: "https://x.com/barisfurkanuzun" },
+  ];
+
   return (
     <div style={{ height: "100vh", overflow: "hidden", position: "relative" }}>
       {showIntro && <Intro onFinish={() => setShowIntro(false)} />}
@@ -46,20 +83,35 @@ export default function App() {
         >
           <ThemeSelector />
           <Shape />
-
+          {isMobile && (
+            <StaggeredMenu
+              position="right"
+              items={menuItems}
+              socialItems={socialItems}
+              displaySocials={true}
+              displayItemNumbering={true}
+              menuButtonColor="#000"
+              openMenuButtonColor="#000"
+              changeMenuColorOnOpen={true}
+              colors={["#42e2f4", "#fbf2b1"]}
+              accentColor="#42e2f4"
+              onMenuOpen={() => console.log("Menu opened")}
+              onMenuClose={() => console.log("Menu closed")}
+              onItemClick={handleMenuNavigation} // Yeni prop
+            />
+          )}
           <Swiper
             direction="vertical"
             slidesPerView={1}
             mousewheel={true}
             modules={[Mousewheel]}
+            onSwiper={(swiper) => (verticalSwiperRef.current = swiper)}
             style={{ width: "100vw", height: "100vh" }}
           >
-            {/* Home */}
             <SwiperSlide>
               <Home />
             </SwiperSlide>
 
-            {/* Horizontal Swiper */}
             <SwiperSlide>
               <div className="custom-pagination"></div>
               <Swiper
@@ -67,7 +119,7 @@ export default function App() {
                 slidesPerView={1}
                 mousewheel={{ forceToAxis: true }}
                 modules={[Mousewheel, Pagination]}
-                onSwiper={(swiper) => (swiperRef.current = swiper)}
+                onSwiper={(swiper) => (horizontalSwiperRef.current = swiper)}
                 style={{ width: "100vw", height: "100vh" }}
                 pagination={{
                   el: ".custom-pagination",
@@ -76,12 +128,11 @@ export default function App() {
                     `<span class="${className}">${index + 1}</span>`,
                 }}
               >
-                {/* About */}
                 <SwiperSlide>
                   <About />
                   {!isMobile && (
                     <div
-                      onClick={() => swiperRef.current.slideNext()}
+                      onClick={() => horizontalSwiperRef.current.slideNext()}
                       className="next-button"
                     >
                       go to <span className="neon-highlight">Experience</span>
@@ -89,12 +140,11 @@ export default function App() {
                   )}
                 </SwiperSlide>
 
-                {/* Experience */}
                 <SwiperSlide>
                   <Experience />
                   {!isMobile && (
                     <div
-                      onClick={() => swiperRef.current.slideNext()}
+                      onClick={() => horizontalSwiperRef.current.slideNext()}
                       className="next-button"
                     >
                       go to{" "}
@@ -103,7 +153,6 @@ export default function App() {
                   )}
                 </SwiperSlide>
 
-                {/* Miscellaneous */}
                 <SwiperSlide>
                   <Miscellaneous />
                   <div onClick={() => handleDownload()} className="next-button">

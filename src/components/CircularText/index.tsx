@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import type { ReactNode } from "react";
+import type { ReactNode, CSSProperties } from "react";
 
 import {
   motion,
@@ -10,12 +10,14 @@ import {
 import type { Transition } from "framer-motion";
 
 import "./style.css";
+
 interface CircularTextProps {
   text: string;
   spinDuration?: number;
   onHover?: "slowDown" | "speedUp" | "pause" | "goBonkers";
   className?: string;
   children?: ReactNode;
+  style?: CSSProperties; // Type ekle
 }
 
 const getRotationTransition = (
@@ -46,6 +48,7 @@ const CircularText = ({
   onHover = "speedUp",
   className = "",
   children,
+  style,
 }: CircularTextProps) => {
   const letters = Array.from(text);
   const controls = useAnimation();
@@ -106,7 +109,15 @@ const CircularText = ({
   };
 
   return (
-    <div style={{ position: "relative" }}>
+    <div
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        ...style,
+      }}
+    >
       {children && <div className="center-child">{children}</div>}
       <motion.div
         className={`circular-text ${className}`}
