@@ -47,7 +47,7 @@
   background-color: var(--icon-color1);
   border-radius: 50px;
   color: var(--next-button-color);
-  padding: 0.6em 1.2em;
+  padding: 0.3em 1em;
 }
 .neon-highlight {
   background: var(--neon-highlight);

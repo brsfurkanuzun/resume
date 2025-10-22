@@ -4,7 +4,7 @@
   background-color: var(--blur-background);
   display: flex;
   z-index: 1;
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(20px);
 }
 .blured-container-content-misc {
   display: flex;

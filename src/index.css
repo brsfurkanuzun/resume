@@ -9,7 +9,7 @@ html.light {
   --switch-toggle-background: #00000016;
   --switch-knob-color: linear-gradient(90deg, #494949, #828082);
   --shape-color: linear-gradient(90deg, #00000000, #000000);
-  --blur-background: #ffffff70;
+  --blur-background: #ffffff25;
   --tag-button-background: #00000008;
   --icon-color1: #000000;
   --icon-color2: #00000030;
@@ -27,14 +27,14 @@ html.dark {
   --switch-toggle-background: #ffffff16;
   --switch-knob-color: linear-gradient(90deg, #d1d1d1, #939393);
   --shape-color: linear-gradient(90deg, #ffffff00, #ffffff);
-  --blur-background: #35353570;
+  --blur-background: #35353525;
   --tag-button-background: #ffffff08;
   --icon-color1: #ffffff;
   --icon-color2: #ffffff30;
   --pagination-container-bg: #00000070;
   --pagination-bullet-bg: #ffffff16;
   --next-button-color: #000000;
-  --neon-highlight: #000
+  --neon-highlight: #000000;
   --magnet-line:#ffffff30;
 
 

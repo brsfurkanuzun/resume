@@ -4,7 +4,7 @@
   background-color: var(--blur-background);
   display: flex;
   z-index: 1;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(20px);
 }
 .blured-container-content-about {
   display: flex;
@@ -61,6 +61,9 @@
     width: 100vw;
     padding-left: 2vw; 
   }
+  .blured-container-about {
+  width: 100vw;
+}
 
  .info-section {
   width:95vw;

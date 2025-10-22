@@ -235,7 +235,7 @@
 .sm-socials-link {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #111;
+  color: var(--text-color);
   text-decoration: none;
   position: relative;
   padding: 2px 0;
@@ -268,7 +268,7 @@
 
 .sm-panel-item {
   position: relative;
-  color: #000;
+  color: var(--text-color);
   font-weight: 600;
   font-size: 3.5rem;
   cursor: pointer;

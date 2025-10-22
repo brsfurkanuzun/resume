@@ -4,7 +4,7 @@
   height: 50vh;
   background-color: var(--blur-background);
   width: 100vw;
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(20px);
   padding-left: 5vw;
   display: flex;
 }
@@ -73,6 +73,7 @@
     flex-direction: column;
     padding: 1rem;
     gap: 1.5rem;
+    padding-bottom: 40vh;
   }
 
   .job-container {
